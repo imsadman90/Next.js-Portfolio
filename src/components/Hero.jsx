@@ -7,7 +7,7 @@ const Hero = () => {
       className="flex-grow flex items-center justify-center py-12 lg:py-20"
     >
       <div className="max-w-7xl w-full mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center pt-20">
           {/* Left Content: Typography */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -80,7 +80,7 @@ const Hero = () => {
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:border-white/40 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/20"
-                href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                href="https://drive.google.com/file/d/1_CHrRkRD2pbZ59B4O_DOJSz2ARR7cug8/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
                 download
@@ -126,8 +126,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative order-1 lg:order-2 flex justify-center items-center h-[400px] lg:h-[600px]"
           >
-            {/* Background Glow Blob */}
-            <motion.div
+            {/* Background Glow Blob - Disabled for mobile performance */}
+            {/* <motion.div
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.2, 0.3, 0.2],
@@ -151,20 +151,17 @@ const Hero = () => {
                 delay: 0.5,
               }}
               className="absolute w-[200px] h-[200px] bg-cyan-500 rounded-full blur-[80px] translate-x-20 -translate-y-20"
-            ></motion.div>
+            ></motion.div> */}
 
             {/* Portrait Image Container */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.7 }}
-              className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl overflow-hidden ring-4 ring-white/10 shadow-[0_20px_60px_rgba(55,19,236,0.35)] object-glow"
-            >
+            <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl overflow-hidden ring-4 ring-white/10 shadow-[0_20px_60px_rgba(55,19,236,0.35)] object-glow">
               <img
                 alt="Professional headshot of Marcus Chen wearing a dark blazer and smiling"
                 className="w-full h-full object-cover"
                 src="https://i.ibb.co/pjSM4L2R/sami.png"
+                loading="lazy"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
         {/* Social Links */}
@@ -191,10 +188,8 @@ const Hero = () => {
               icon: "alternate_email",
             },
           ].map((social) => (
-            <motion.a
+            <a
               key={social.label}
-              whileHover={{ y: -2, scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-100 hover:border-primary/60 hover:bg-primary/10 transition-all"
               href={social.href}
               target="_blank"
@@ -204,7 +199,7 @@ const Hero = () => {
                 {social.icon}
               </span>
               <span className="text-sm font-medium">{social.label}</span>
-            </motion.a>
+            </a>
           ))}
         </motion.div>
       </div>

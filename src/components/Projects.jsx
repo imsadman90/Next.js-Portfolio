@@ -8,7 +8,7 @@ const projects = [
     title: "ScholarStream",
     description:
       "A full-featured scholarship management platform that helps students discover, apply for, and track scholarships through role-based dashboards for students, moderators, and admins.",
-    image: "https://i.ibb.co/HfVrNYgc/scholarstream.png",
+    image: "https://i.ibb.co.com/fdm8pdRK/Screenshot-2026-01-25-171404.png",
     stack: [
       "React",
       "Tailwind CSS",
@@ -31,7 +31,7 @@ const projects = [
     title: "Habit Tracker Web App",
     description:
       "A productivity-focused web application that allows users to create, manage, and track daily habits with streak visualization and authentication.",
-    image: "https://i.ibb.co/bgPbcmJq/habit.png",
+    image: "https://i.ibb.co.com/5hgrYSyb/Screenshot-2026-01-25-171519.png",
     stack: [
       "React",
       "Tailwind CSS",
@@ -131,17 +131,15 @@ const Projects = () => {
             <motion.article
               key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative flex flex-col h-full bg-[#1e1933]/60 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:shadow-[0_10px_30px_-10px_rgba(55,19,236,0.4)] transition-all duration-300 ease-out"
+              className="group relative flex flex-col h-full bg-[#1e1933]/60 border border-white/10 rounded-xl overflow-hidden hover:shadow-[0_10px_30px_-10px_rgba(55,19,236,0.4)] transition-all duration-300 ease-out"
             >
               {/* Image */}
               <div className="w-full aspect-video bg-slate-800 relative overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url('${project.image}')` }}
-                ></motion.div>
+                  loading="lazy"
+                ></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1e1933] to-transparent opacity-60"></div>
               </div>
 
@@ -174,9 +172,7 @@ const Projects = () => {
 
                   {/* Actions */}
                   <div className="flex items-center gap-3">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    <button
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-semibold transition-colors"
                       onClick={() => setSelectedProject(project)}
                     >
@@ -184,10 +180,8 @@ const Projects = () => {
                         visibility
                       </span>
                       View Details
-                    </motion.button>
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    </button>
+                    <a
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 text-white rounded-lg text-sm font-semibold border border-white/10 transition-colors"
                       href={project.liveUrl}
                       target="_blank"
@@ -197,7 +191,7 @@ const Projects = () => {
                         open_in_new
                       </span>
                       Live
-                    </motion.a>
+                    </a>
                   </div>
                 </div>
               </div>

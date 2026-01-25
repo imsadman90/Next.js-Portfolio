@@ -7,6 +7,8 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -15,10 +17,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    if (status === "sending") return;
+
+    setStatus("sending");
+    setError("");
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS env vars missing");
+      }
+
+      await emailjs.send(serviceId, templateId, formData, publicKey);
+
+      setStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => setStatus("idle"), 1500);
+    } catch (err) {
+      setStatus("error");
+      setError("Failed to send. Please try again.");
+      setTimeout(() => setStatus("idle"), 2000);
+      console.error(err);
+    }
   };
 
   return (
@@ -120,16 +146,29 @@ const Contact = () => {
             transition={{ delay: 0.5 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 text-gray-300"
           >
-            <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary">
-                mail
-              </span>
-              <a
-                className="text-base hover:text-primary dark:hover:text-white"
-                href="mailto:sadmansami473@gmail.com"
-              >
-                sadmansami473@gmail.com
-              </a>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">
+                  mail
+                </span>
+                <a
+                  className="text-base hover:text-primary dark:hover:text-white"
+                  href="mailto:sadmansami473@gmail.com"
+                >
+                  sadmansami473@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary">
+                  call
+                </span>
+                <a
+                  className="text-base hover:text-primary dark:hover:text-white"
+                  href="tel:0175741648"
+                >
+                  0175741648
+                </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -247,16 +286,25 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="mt-4 w-full bg-primary hover:bg-[#2a0eb5] text-white font-bold py-4 rounded-xl shadow-[0_4px_20px_rgba(55,19,236,0.4)] hover:shadow-[0_6px_25px_rgba(55,19,236,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                whileHover={{ scale: status === "sending" ? 1 : 1.02 }}
+                whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
+                className="mt-4 w-full bg-primary hover:bg-[#2a0eb5] text-white font-bold py-4 rounded-xl shadow-[0_4px_20px_rgba(55,19,236,0.4)] hover:shadow-[0_6px_25px_rgba(55,19,236,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group/btn disabled:opacity-70 disabled:cursor-not-allowed"
                 type="submit"
+                disabled={status === "sending"}
               >
-                <span>Send Message</span>
+                <span>
+                  {status === "sending"
+                    ? "Sending..."
+                    : status === "sent"
+                      ? "Message Sent!"
+                      : "Send Message"}
+                </span>
                 <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">
-                  send
+                  {status === "sent" ? "check_circle" : "send"}
                 </span>
               </motion.button>
+
+              {error && <p className="text-sm text-red-400">{error}</p>}
             </form>
           </div>
         </motion.div>

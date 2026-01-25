@@ -27,9 +27,7 @@ const skillCategories = [
     title: "Database",
     icon: "storage",
     color: "emerald",
-    skills: [
-      { name: "MongoDB", level: 85 },
-    ],
+    skills: [{ name: "MongoDB", level: 85 }],
   },
   {
     title: "Tools",
@@ -79,8 +77,8 @@ const Skills = () => {
       id="skills"
       className="flex-grow flex flex-col items-center justify-center py-12 px-4 md:px-10 relative"
     >
-      {/* Background Decorative Blobs */}
-      <motion.div
+      {/* Background Decorative Blobs - Disabled for mobile performance */}
+      {/* <motion.div
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.2, 0.3, 0.2],
@@ -104,7 +102,7 @@ const Skills = () => {
           delay: 1,
         }}
         className="absolute bottom-20 right-10 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"
-      ></motion.div>
+      ></motion.div> */}
 
       <div className="layout-content-container flex flex-col max-w-[1200px] w-full z-10">
         {/* Section Header */}

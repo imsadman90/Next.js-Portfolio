@@ -82,9 +82,9 @@ const Contact = () => {
               transition={{ delay: 0.3 }}
               className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-lg"
             >
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your visions. Let's build something
-              amazing together.
+              I&apos;m always open to discussing new projects, creative ideas,
+              or opportunities to be part of your visions. Let&apos;s build
+              something amazing together.
             </motion.p>
           </div>
 

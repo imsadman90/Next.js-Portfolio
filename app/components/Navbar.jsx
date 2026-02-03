@@ -98,7 +98,7 @@ const Navbar = () => {
                 contact?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Let's Talk
+              Let&apos;s Talk
             </motion.button>
           </div>
         </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
                   setMobileMenuOpen(false);
                 }}
               >
-                Let's Talk
+                Let&apos;s Talk
               </motion.button>
             </motion.div>
           </motion.div>

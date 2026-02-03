@@ -75,16 +75,17 @@ const About = () => {
               className="prose prose-lg text-gray-400 leading-relaxed max-w-lg"
             >
               <p>
-                I'm a frontend developer with 6 months of hands-on experience
-                building responsive and interactive web interfaces using React
-                and modern UI systems. I enjoy staying busy with meaningful work
-                and continuously improving my skills through real projects.
+                I&apos;m a frontend developer with 6 months of hands-on
+                experience building responsive and interactive web interfaces
+                using React and modern UI systems. I enjoy staying busy with
+                meaningful work and continuously improving my skills through
+                real projects.
               </p>
               <p className="mt-4">
-                I have working knowledge of the MERN stack and I'm currently
-                focusing on mastering Next.js to build scalable,
+                I have working knowledge of the MERN stack and I&apos;m
+                currently focusing on mastering Next.js to build scalable,
                 production-ready applications. I believe in learning by building
-                and improving every iteration. <br /> Beyond coding, I'm a
+                and improving every iteration. <br /> Beyond coding, I&apos;m a
                 vocalist and guitarist. Music helps me think creatively, while
                 coding satisfies my love for structure and logic. Both keep me
                 focused, disciplined, and motivated.

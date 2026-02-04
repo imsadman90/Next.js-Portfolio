@@ -130,7 +130,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group flex items-center justify-center gap-3 h-12 px-8 bg-primary hover:bg-[#2a0eb5] text-white rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(55,19,236,0.3)] hover:shadow-[0_0_30px_rgba(55,19,236,0.5)]"
-                href="https://drive.google.com/file/d/1AsKUvO0driyxsX8fWhJnR4d-njFHM8YU/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1_CHrRkRD2pbZ59B4O_DOJSz2ARR7cug8/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
                 download

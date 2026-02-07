@@ -83,7 +83,7 @@ const Hero = () => {
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:border-white/40 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/20"
-                href="https://drive.google.com/file/d/1_CHrRkRD2pbZ59B4O_DOJSz2ARR7cug8/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1AsKUvO0driyxsX8fWhJnR4d-njFHM8YU/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
                 download

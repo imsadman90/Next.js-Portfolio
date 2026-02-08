@@ -14,7 +14,6 @@ export const metadata = {
     "React Developer",
     "Next.js Developer",
     "Web Developer",
-    "UI Engineer",
     "JavaScript Developer",
     "Tailwind CSS",
     "Portfolio",

@@ -6,6 +6,28 @@ import ProjectDetail from "./ProjectDetail";
 
 const projects = [
   {
+    id: "autoverse",
+    title: "AutoVerse — Car Explorer & Comparison Platform",
+    description:
+      "A modern, responsive car browsing and comparison web application built with React 19 and Tailwind CSS v4. AutoVerse allows users to explore car models, apply advanced filters, compare vehicles side-by-side, browse brands, and manage favorites — all within a sleek dark-themed UI enhanced with smooth animations.",
+    image: "https://i.ibb.co/DHZ5jzJC/Screenshot-2026-02-08-213459.png",
+    stack: [
+      "React 19",
+      "Tailwind CSS v4",
+      "Framer Motion",
+      "React Responsive Carousel",
+      "Fetch API",
+      "LocalStorage",
+    ],
+    liveUrl: "https://latest-car-details.netlify.app",
+    repoUrl: "https://github.com/imsadman90/latest-cars-update.git",
+    challenges:
+      "Building a direction-aware hero carousel with keyboard navigation, managing complex client-side filtering/sorting/pagination for car data, implementing accurate side-by-side comparison logic with winner highlighting, and maintaining smooth animations and performance across all screen sizes.",
+    improvements:
+      "Introduce backend-powered authentication and user profiles, migrate data from static JSON to a database with API endpoints and enhance comparison features.",
+  },
+
+  {
     id: "scholarstream",
     title: "ScholarStream",
     description:
@@ -49,27 +71,6 @@ const projects = [
       "Designing a smooth habit tracking flow, managing user-specific data securely, and maintaining responsive UI across devices.",
     improvements:
       "Add habit analytics, reminders via notifications, and weekly performance insights.",
-  },
-
-  {
-    id: "hero-io",
-    title: "HERO.IO – Modern App Store",
-    description:
-      "A React-based application showcasing trending apps where users can install, uninstall, and manage apps with localStorage persistence.",
-    image: "https://i.ibb.co/HTL6Hpcb/heroapp.png",
-    stack: [
-      "React",
-      "React Router",
-      "Tailwind CSS",
-      "LocalStorage",
-      "SweetAlert2",
-    ],
-    liveUrl: "https://lively-sunburst-a0100e.netlify.app/",
-    repoUrl: "https://github.com/imsadman90/Assignment-8.git",
-    challenges:
-      "Managing persistent state using localStorage and implementing smooth UX for install and uninstall actions.",
-    improvements:
-      "Add user accounts, cloud sync, and dynamic app data from an external API.",
   },
 ];
 

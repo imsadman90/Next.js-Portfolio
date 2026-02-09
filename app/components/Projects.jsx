@@ -112,9 +112,9 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Recent Projects
-          </h1>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Projects by Sadman Sami
+          </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
             A selection of my latest work in full-stack development. Exploring
             scalable architectures and intuitive user experiences with the MERN

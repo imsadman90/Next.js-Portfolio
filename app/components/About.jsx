@@ -46,25 +46,25 @@ const About = () => {
                 <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/30"></div>
               </motion.div>
 
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 className="text-4xl lg:text-6xl font-black leading-[1.1] tracking-tight text-white"
               >
-                Crafting Digital Experiences
-              </motion.h1>
+                About Sadman Sami
+              </motion.h2>
 
-              <motion.h2
+              <motion.h3
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
                 className="text-xl text-gray-400 font-medium mt-2"
               >
-                Frontend Developer | MERN Stack Learner | UI-Focused Engineer
-              </motion.h2>
+                Frontend Developer | MERN Stack Engineer | UI-Focused Developer
+              </motion.h3>
             </div>
 
             <motion.div
@@ -75,20 +75,20 @@ const About = () => {
               className="prose prose-lg text-gray-400 leading-relaxed max-w-lg"
             >
               <p>
-                I&apos;m a frontend developer with 6 months of hands-on
-                experience building responsive and interactive web interfaces
-                using React and modern UI systems. I enjoy staying busy with
+                Sadman Sami is a frontend developer with hands-on experience
+                building responsive and interactive web interfaces using React,
+                Next.js, and modern UI systems. I enjoy staying busy with
                 meaningful work and continuously improving my skills through
                 real projects.
               </p>
               <p className="mt-4">
-                I have working knowledge of the MERN stack and I&apos;m
-                currently focusing on mastering Next.js to build scalable,
-                production-ready applications. I believe in learning by building
-                and improving every iteration. <br /> Beyond coding, I&apos;m a
-                vocalist and guitarist. Music helps me think creatively, while
-                coding satisfies my love for structure and logic. Both keep me
-                focused, disciplined, and motivated.
+                As a MERN stack developer, Sadman Sami focuses on building
+                scalable, production-ready applications with Node.js, Express,
+                and MongoDB. I believe in learning by building and improving
+                every iteration. <br /> Beyond coding, I&apos;m a vocalist and
+                guitarist. Music helps me think creatively, while coding
+                satisfies my love for structure and logic. Both keep me focused,
+                disciplined, and motivated.
               </p>
             </motion.div>
 

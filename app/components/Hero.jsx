@@ -32,7 +32,7 @@ const Hero = () => {
                 </span>
               </motion.div>
 
-              {/* Massive Headline */}
+              {/* H1 — Primary keyword: Sadman Sami */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -45,17 +45,29 @@ const Hero = () => {
                 </span>
               </motion.h1>
 
-              {/* Intro Paragraph */}
+              {/* H2 — Secondary keyword phrase */}
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55 }}
+                className="text-xl sm:text-2xl font-semibold text-slate-300 tracking-tight"
+              >
+                Frontend Developer &amp; MERN Stack Engineer
+              </motion.h2>
+
+              {/* Intro Paragraph — SEO-rich copy */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 className="text-lg text-slate-400 max-w-xl leading-relaxed mx-auto lg:mx-0 font-light"
               >
-                Frontend-first developer crafting responsive, accessible, and
-                performant experiences. I bridge product goals with polished UI
-                engineering, balancing design systems, animation, and robust
-                MERN-stack architecture.
+                Hi, I&apos;m{" "}
+                <strong className="text-white font-medium">Sadman Sami</strong>{" "}
+                — a frontend-first developer crafting responsive, accessible,
+                and performant web experiences. I specialize in React, Next.js,
+                and the MERN stack, bridging product goals with polished UI
+                engineering.
               </motion.p>
             </div>
 

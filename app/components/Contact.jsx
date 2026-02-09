@@ -66,15 +66,15 @@ const Contact = () => {
           className="flex flex-col gap-8 order-2 lg:order-1"
         >
           <div className="space-y-6">
-            <motion.h1
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50"
             >
-              Get in Touch
-            </motion.h1>
+              Contact Sadman Sami
+            </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

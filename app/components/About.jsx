@@ -178,9 +178,10 @@ const About = () => {
               className="relative w-full h-full drop-shadow-2xl"
             >
               <Image
-                src="https://i.ibb.co/pjSM4L2R/sami.png"
+                src="https://i.ibb.co/XZLRCfpr/sami.jpg"
                 alt="Sadman Sami profile"
-                fill
+                width={384}
+                height={384}
                 className="object-contain object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

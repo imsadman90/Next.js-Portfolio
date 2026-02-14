@@ -4,17 +4,17 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: "www.inhousemedicare.com",
+        port: "",
+        pathname: "/wp-content/uploads/**",
       },
       {
         protocol: "https",
-        hostname: "i.ibb.co.com",
+        hostname: "i.ibb.co",
+        port: "",
+        pathname: "/**",
       },
     ],
-  },
-  // Optimize build performance
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 

@@ -37,7 +37,7 @@ const articleSchema = {
   datePublished: "2026-02-09",
   dateModified: "2026-02-09",
   mainEntityOfPage: "https://sadmansami.dev/blog/who-is-sadman-sami",
-  image: "https://i.ibb.co/pjSM4L2R/sami.png",
+  image: "/images/sami.webp",
 };
 
 export default function WhoIsSadmanSami() {

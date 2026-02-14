@@ -1,22 +1,27 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 const ProjectDetail = ({ project, isOpen, onClose }) => {
+  const modalContentRef = useRef(null);
+
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
+      // Prevent body scroll
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      document.body.classList.add("overflow-hidden");
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
+      document.body.classList.remove("overflow-hidden");
+      document.body.style.paddingRight = "0px";
     }
 
     return () => {
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
+      document.body.classList.remove("overflow-hidden");
+      document.body.style.paddingRight = "0px";
     };
   }, [isOpen]);
 
@@ -30,21 +35,28 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-md overflow-hidden"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md overflow-hidden"
           onClick={onClose}
         >
           <motion.div
+            ref={modalContentRef}
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-[#1e1933]/95 backdrop-blur-md border border-white/10 rounded-2xl p-8"
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#1e1933]/95 backdrop-blur-md border border-white/10 rounded-2xl p-8 overscroll-contain"
             onClick={(e) => e.stopPropagation()}
+            onWheel={(e) => {
+              e.stopPropagation();
+            }}
+            onTouchMove={(e) => {
+              e.stopPropagation();
+            }}
           >
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-2 right-0 p-1 hover:bg-white/10 rounded-lg transition-colors"
+              className="sticky top-0 left-full ml-auto mb-4 p-1 hover:bg-white/10 rounded-lg transition-colors z-10 bg-[#1e1933]/80 backdrop-blur-sm"
             >
               <span className="material-symbols-outlined text-white/70 text-[28px]">
                 close

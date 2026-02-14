@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 import ProjectDetail from "./ProjectDetail";
 
 const projects = [
@@ -32,7 +33,7 @@ const projects = [
     title: "ScholarStream",
     description:
       "A full-featured scholarship management platform that helps students discover, apply for, and track scholarships through role-based dashboards for students, moderators, and admins.",
-    image: "https://i.ibb.co.com/fdm8pdRK/Screenshot-2026-01-25-171404.png",
+    image: "https://i.ibb.co/YT2N6cwL/Screenshot-2026-02-10-211034.png",
     stack: [
       "React",
       "Tailwind CSS",
@@ -55,7 +56,7 @@ const projects = [
     title: "Habit Tracker Web App",
     description:
       "A productivity-focused web application that allows users to create, manage, and track daily habits with streak visualization and authentication.",
-    image: "https://i.ibb.co.com/5hgrYSyb/Screenshot-2026-01-25-171519.png",
+    image: "https://i.ibb.co/xSPCgKBS/Screenshot-2026-02-10-224634.png",
     stack: [
       "React",
       "Tailwind CSS",
@@ -138,11 +139,20 @@ const Projects = () => {
             >
               {/* Image */}
               <div className="w-full aspect-video bg-slate-800 relative overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${project.image}')` }}
-                  loading="lazy"
-                ></div>
+                <div className="absolute inset-0">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
+                    style={{
+                      objectFit: "cover",
+                      borderRadius: "inherit",
+                      backgroundColor: "#1e1933",
+                    }}
+                    priority={index === 0}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1e1933] to-transparent opacity-60"></div>
               </div>
 

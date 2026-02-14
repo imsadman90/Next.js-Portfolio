@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "./LenisProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -155,9 +156,17 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
         <link rel="canonical" href={SITE_URL} />
+        {/* Optimize Inter font for layout shift mitigation */}
+        <style>{`
+          :root { font-family: 'Inter', sans-serif; }
+          @font-face {
+            font-family: 'Inter';
+            font-display: swap;
+          }
+        `}</style>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -178,7 +187,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-background-dark font-sans antialiased">
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

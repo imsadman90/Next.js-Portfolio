@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex-grow flex items-center justify-center px-6 lg:px-40 py-12 relative z-10"
+      className="grow flex items-center justify-center px-6 lg:px-40 py-12 relative z-10"
     >
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left Column: Info & Social */}
@@ -71,7 +71,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50"
+              className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-linear-to-r from-white via-white to-white/50"
             >
               Contact Sadman Sami
             </motion.h2>
@@ -196,7 +196,7 @@ const Contact = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur -z-10"
+              className="absolute -inset-1 bg-linear-to-r from-primary to-purple-600 rounded-2xl blur -z-10"
             ></motion.div>
 
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>

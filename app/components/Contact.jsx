@@ -27,25 +27,21 @@ const Contact = () => {
     setError("");
 
     try {
-      // Note: You'll need to set up environment variables for EmailJS
-      // const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-      // const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-      // const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-      // if (!serviceId || !templateId || !publicKey) {
-      //   throw new Error("EmailJS env vars missing");
-      // }
-
-      // await emailjs.send(serviceId, templateId, formData, publicKey);
-
-      // Simulated success for now
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to send. Please try again.");
+      }
       setStatus("sent");
       setFormData({ name: "", email: "", message: "" });
-
       setTimeout(() => setStatus("idle"), 1500);
     } catch (err) {
       setStatus("error");
-      setError("Failed to send. Please try again.");
+      setError(err.message || "Failed to send. Please try again.");
       setTimeout(() => setStatus("idle"), 2000);
       console.error(err);
     }
@@ -54,9 +50,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="grow flex items-center justify-center px-6 lg:px-40 py-12 relative z-10"
+      className="grow flex items-center justify-center px-6 lg:px-10 py-12 relative z-10"
     >
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left Column: Info & Social */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -73,7 +69,8 @@ const Contact = () => {
               transition={{ delay: 0.2 }}
               className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-linear-to-r from-white via-white to-white/50"
             >
-              Contact Sadman Sami
+              Contact with{" "}
+              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Sadman</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -95,7 +92,7 @@ const Contact = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-col gap-6 pt-4"
           >
-            <p className="text-sm font-bold uppercase tracking-widest text-primary/80">
+            <p className="text-md font-bold uppercase tracking-widest text-primary/80">
               Connect with me
             </p>
             <div className="flex gap-6">
@@ -170,7 +167,7 @@ const Contact = () => {
                   className="text-base hover:text-primary dark:hover:text-white"
                   href="tel:0175741648"
                 >
-                  0175741648
+                  01757411648
                 </a>
               </div>
             </div>
@@ -196,7 +193,7 @@ const Contact = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -inset-1 bg-linear-to-r from-primary to-purple-600 rounded-2xl blur -z-10"
+              className="absolute -inset-1 bg-linear-to-r from-primary to-purple-600 rounded-2xl -z-10"
             ></motion.div>
 
             <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
@@ -208,7 +205,7 @@ const Contact = () => {
                 className="flex flex-col gap-2"
               >
                 <label
-                  className="text-sm font-medium text-gray-300 ml-1"
+                  className="text-md font-medium text-gray-300 ml-1"
                   htmlFor="name"
                 >
                   Name
@@ -238,7 +235,7 @@ const Contact = () => {
                 className="flex flex-col gap-2"
               >
                 <label
-                  className="text-sm font-medium text-gray-300 ml-1"
+                  className="text-md font-medium text-gray-300 ml-1"
                   htmlFor="email"
                 >
                   Email Address
@@ -268,7 +265,7 @@ const Contact = () => {
                 className="flex flex-col gap-2"
               >
                 <label
-                  className="text-sm font-medium text-gray-300 ml-1"
+                  className="text-md font-medium text-gray-300 ml-1"
                   htmlFor="message"
                 >
                   Message
@@ -308,7 +305,7 @@ const Contact = () => {
                 </span>
               </motion.button>
 
-              {error && <p className="text-sm text-red-400">{error}</p>}
+              {error && <p className="text-md text-red-400">{error}</p>}
             </form>
           </div>
         </motion.div>

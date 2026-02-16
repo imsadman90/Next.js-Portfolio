@@ -10,6 +10,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        port: "",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "https",
         hostname: "i.ibb.co",
         port: "",
         pathname: "/**",

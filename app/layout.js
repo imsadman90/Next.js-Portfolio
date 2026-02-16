@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./LenisProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const geist = Geist({ subsets: ["latin"] });
 
 const SITE_URL = "https://sadmansami.dev";
 
@@ -152,21 +152,13 @@ const profilePageSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={geist.className}>
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
         <link rel="canonical" href={SITE_URL} />
-        {/* Optimize Inter font for layout shift mitigation */}
-        <style>{`
-          :root { font-family: 'Inter', sans-serif; }
-          @font-face {
-            font-family: 'Inter';
-            font-display: swap;
-          }
-        `}</style>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -186,7 +178,11 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="bg-background-dark font-sans antialiased">
+      <body
+        className={
+          geist.className + " bg-background-dark font-sans antialiased"
+        }
+      >
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

@@ -10,7 +10,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-slate-500 text-sm"
+          className="text-slate-500 text-md"
         >
           © 2026 Sadman Sami. All rights reserved.
         </motion.p>

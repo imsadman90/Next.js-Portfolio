@@ -2,63 +2,110 @@
 
 import { motion } from "framer-motion";
 
+// Removed unused `color` property for cleaner data
 const skillCategories = [
   {
     title: "Frontend",
     icon: "web",
-    color: "blue",
     skills: [
       { name: "React.js", level: 90 },
+      { name: "Next.js", level: 80 },
       { name: "Tailwind CSS", level: 88 },
       { name: "JavaScript (ES6+)", level: 92 },
-      { name: "Accessibility", level: 82 },
+      { name: "Accessibility", level: 85 },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & Database",
     icon: "dns",
-    color: "purple",
     skills: [
       { name: "Node.js", level: 84 },
       { name: "Express.js", level: 82 },
       { name: "RESTful APIs", level: 86 },
       { name: "JWT Authentication", level: 78 },
+      { name: "MongoDN", level: 90 },
     ],
   },
+
   {
-    title: "Database",
-    icon: "storage",
-    color: "emerald",
-    skills: [{ name: "MongoDB", level: 85 }],
-  },
-  {
-    title: "Tools",
+    title: "Tools & Animations",
     icon: "construction",
-    color: "orange",
     skills: [
       { name: "Git & GitHub", level: 92 },
       { name: "VS Code", level: 90 },
       { name: "npm", level: 88 },
-    ],
-  },
-  {
-    title: "Animation",
-    icon: "animation",
-    color: "pink",
-    skills: [
       { name: "Framer Motion", level: 85 },
       { name: "CSS Animations", level: 80 },
     ],
   },
 ];
 
+// Extracted card into its own component for better readability and reusability
+const SkillCard = ({ category }) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.02, y: -4 }}
+      className="group relative flex flex-col p-6 rounded-2xl bg-[#1a162e]/60 backdrop-blur-xl border border-white/5 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(55,19,236,0.3)] min-h-[340px]"
+    >
+      {/* Category Header */}
+      <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/5">
+        <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:text-white group-hover:bg-primary/20 transition-colors">
+          <span className="material-symbols-outlined text-[24px]">
+            {category.icon}
+          </span>
+        </div>
+        <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+          {category.title}
+        </h3>
+      </div>
+
+      {/* Skill List */}
+      <ul className="flex flex-col gap-4">
+        {category.skills.map((skill, index) => (
+          <li
+            key={skill.name}
+            className="flex flex-col gap-2 text-[#d0cde8] group-hover:text-white transition-colors"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-[18px] text-primary">
+                  chevron_right
+                </span>
+                <span className="text-md font-medium">{skill.name}</span>
+              </div>
+              <span className="text-md text-slate-400 font-semibold">
+                {skill.level}%
+              </span>
+            </div>
+
+            <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: `${skill.level}%` }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2 + index * 0.1,
+                  ease: "easeOut",
+                }}
+                className="h-full rounded-full bg-gradient-to-r from-primary to-purple-600"
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+};
+
 const Skills = () => {
+  // Animation variants (kept simple and reusable)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.2, // Slightly increased for smoother flow
       },
     },
   };
@@ -68,9 +115,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -97,69 +142,16 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
+        {/* Skills Grid – switched to CSS Grid for cleaner, more maintainable layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-wrap justify-center gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="group relative flex flex-col p-6 rounded-2xl bg-[#1a162e]/60 backdrop-blur-xl border border-white/5 shadow-lg w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(55,19,236,0.3)]"
-            >
-              {/* Category Header */}
-              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/5">
-                <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:text-white group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-[24px]">
-                    {category.icon}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-              </div>
-
-              {/* Skill List */}
-              <ul className="flex flex-col gap-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.li
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * skillIndex }}
-                    className="flex flex-col gap-2 text-[#d0cde8] group-hover:text-white transition-colors"
-                  >
-                    <div className="flex items-center gap-2 w-full justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[18px] text-primary">
-                          chevron_right
-                        </span>
-                        <span className="text-sm font-medium">
-                          {skill.name}
-                        </span>
-                      </div>
-                      <span className="text-xs text-slate-400 font-semibold">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.1 * skillIndex }}
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-purple-600"
-                      ></motion.div>
-                    </div>
-                  </motion.li>
-                ))}
-              </ul>
+          {skillCategories.map((category) => (
+            <motion.div key={category.title} variants={itemVariants}>
+              <SkillCard category={category} />
             </motion.div>
           ))}
         </motion.div>

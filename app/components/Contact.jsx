@@ -70,7 +70,7 @@ const Contact = () => {
               className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-linear-to-r from-white via-white to-white/50"
             >
               Contact with{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Sadman</span>
+              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Sadmanc</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -113,7 +113,7 @@ export default function Navbar() {
               smoothScrollTo("#contact");
               setMobileOpen(false);
             }}
-            className="mt-3 w-full rounded-full bg-white/10 py-3.5 text-base font-light text-white/70 transition-all hover:shadow-[0_0_30px_-4px_#3713ec] active:scale-[0.98]"
+            className="mt-3 w-full rounded-full bg-white/10 py-3.5 text-base font-light text-white/70 transition-all active:scale-[0.98]"
           >
             Let&apos;s Talk
           </button>

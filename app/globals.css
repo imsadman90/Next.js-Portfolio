@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* Custom Grid Animation/Style */
 .bg-grid {
   background-size: 40px 40px;
@@ -21,7 +20,6 @@
     transparent
   );
 }
-
 
 :root {
   color-scheme: light dark;
@@ -51,5 +49,59 @@ html {
   --color-background-light: #f6f6f8;
   --color-background-dark: #0b0c15;
   --color-surface-dark: #131022;
-  --font-display: 'Inter', sans-serif;
+  --font-display: "Inter", sans-serif;
+}
+
+/* Lightweight CSS keyframes (replacing framer-motion) */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

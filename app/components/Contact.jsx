@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Contact = () => {
@@ -54,168 +53,110 @@ const Contact = () => {
     >
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left Column: Info & Social */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col gap-8 order-2 lg:order-1"
-        >
+        <div className="flex flex-col gap-8 order-2 lg:order-1">
           <div className="space-y-6">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-6xl font-bold tracking-tighter leading-tight bg-clip-text text-transparent bg-linear-to-r from-white via-white to-white/50"
-            >
-              Contact with{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Sadmanc</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-lg"
-            >
+            <h2 className="text-5xl lg:text-6xl font-light  to-white/50">
+              Contact with <br />
+              <span className="text-sky-500">Sadman</span>
+            </h2>
+            <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-lg">
               I&apos;m always open to discussing new projects, creative ideas,
               or opportunities to be part of your visions. Let&apos;s build
               something amazing together.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-col gap-6 pt-4"
-          >
-            <p className="text-md font-bold uppercase tracking-widest text-primary/80">
+          <div className="flex flex-col gap-6 pt-4">
+            <p className="text-md font-light uppercase tracking-widest text-sky-500/80">
               Connect with me
             </p>
             <div className="flex gap-6">
               {/* GitHub */}
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+              <a
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://github.com/imsadman90"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="material-symbols-outlined text-white group-hover:text-primary transition-colors">
+                <span className="material-symbols-outlined text-white/70 group-hover:text-sky-500 transition-colors">
                   code
                 </span>
-              </motion.a>
+              </a>
 
               {/* LinkedIn */}
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+              <a
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://www.linkedin.com/in/sadman-sami-dev/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="material-symbols-outlined text-white group-hover:text-primary transition-colors">
+                <span className="material-symbols-outlined text-white/70 group-hover:text-sky-500 transition-colors">
                   work
                 </span>
-              </motion.a>
+              </a>
 
               {/* Twitter/X */}
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+              <a
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://twitter.com/iamsadmansami"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="material-symbols-outlined text-white group-hover:text-primary transition-colors">
+                <span className="material-symbols-outlined text-white/70 group-hover:text-sky-500 transition-colors">
                   alternate_email
                 </span>
-              </motion.a>
+              </a>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 text-gray-300"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 text-gray-300">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary">
+                <span className="material-symbols-outlined text-sky-500">
                   mail
                 </span>
                 <a
-                  className="text-base hover:text-primary dark:hover:text-white"
+                  className="text-base hover:text-sky-500 dark:hover:text-white/70"
                   href="mailto:sadmansami473@gmail.com"
                 >
                   sadmansami473@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary">
+                <span className="material-symbols-outlined text-sky-500">
                   call
                 </span>
                 <a
-                  className="text-base hover:text-primary dark:hover:text-white"
+                  className="text-base hover:text-sky-500 dark:hover:text-white/70"
                   href="tel:0175741648"
                 >
                   01757411648
                 </a>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Right Column: Glass Form */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="order-1 lg:order-2"
-        >
-          <div className="glass-card rounded-2xl p-8 lg:p-10 w-full relative group">
-            {/* Decorative glow behind the card */}
-            <motion.div
-              animate={{
-                opacity: [0.2, 0.3, 0.2],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute -inset-1 bg-linear-to-r from-primary to-purple-600 rounded-2xl -z-10"
-            ></motion.div>
-
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-col gap-2"
-              >
+        <div className="order-1 lg:order-2">
+          <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-8 lg:p-10 w-full backdrop-blur-sm">
+            <h3 className="text-xl font-light text-white/70 mb-6">
+              Send a Message
+            </h3>
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+              <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-md font-medium text-gray-300 ml-1"
+                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
                   htmlFor="name"
                 >
                   Name
                 </label>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-[20px]">
+                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-white/70 text-[18px]">
                     person
                   </span>
                   <input
-                    className="w-full pl-11 pr-4 py-3 input-glass rounded-xl text-white placeholder-gray-500 focus:outline-none"
+                    className="w-full pl-11 pr-4 py-3 bg-white/[0.08] border border-white/10 rounded-xl text-white/70 placeholder-white/50 focus:outline-none  focus:bg-white/[0.06] transition-all duration-200"
                     id="name"
                     name="name"
                     placeholder="Your Name"
@@ -225,27 +166,21 @@ const Contact = () => {
                     required
                   />
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex flex-col gap-2"
-              >
+              <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-md font-medium text-gray-300 ml-1"
+                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
                   htmlFor="email"
                 >
-                  Email Address
+                  Email
                 </label>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-[20px]">
+                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-white/70 text-[18px]">
                     mail
                   </span>
                   <input
-                    className="w-full pl-11 pr-4 py-3 input-glass rounded-xl text-white placeholder-gray-500 focus:outline-none"
+                    className="w-full pl-11 pr-4 py-3 bg-white/[0.08] border border-white/10 rounded-xl text-white/70 placeholder-white/50 focus:outline-none  focus:bg-white/[0.06] transition-all duration-200"
                     id="email"
                     name="email"
                     placeholder="your.email@example.com"
@@ -255,23 +190,17 @@ const Contact = () => {
                     required
                   />
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="flex flex-col gap-2"
-              >
+              <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-md font-medium text-gray-300 ml-1"
+                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
                   htmlFor="message"
                 >
                   Message
                 </label>
                 <textarea
-                  className="w-full px-4 py-3 input-glass rounded-xl text-white placeholder-gray-500 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 bg-white/[0.08] border border-white/10 rounded-xl text-white/70 placeholder-white/50 focus:outline-none  focus:bg-white/[0.06] transition-all duration-200 resize-none"
                   id="message"
                   name="message"
                   placeholder="Tell me about your project..."
@@ -280,16 +209,10 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 ></textarea>
-              </motion.div>
+              </div>
 
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                whileHover={{ scale: status === "sending" ? 1 : 1.02 }}
-                whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
-                className="mt-4 w-full bg-primary hover:bg-[#2a0eb5] text-white font-bold py-4 rounded-xl shadow-[0_4px_20px_rgba(55,19,236,0.4)] hover:shadow-[0_6px_25px_rgba(55,19,236,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group/btn disabled:opacity-70 disabled:cursor-not-allowed"
+              <button
+                className="mt-2 w-full bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 font-medium py-3.5 rounded-full border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 flex items-center justify-center gap-2 group/btn disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
                 disabled={status === "sending"}
               >
@@ -303,12 +226,12 @@ const Contact = () => {
                 <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">
                   {status === "sent" ? "check_circle" : "send"}
                 </span>
-              </motion.button>
+              </button>
 
               {error && <p className="text-md text-red-400">{error}</p>}
             </form>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

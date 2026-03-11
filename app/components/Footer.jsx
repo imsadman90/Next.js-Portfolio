@@ -25,7 +25,7 @@ const Footer = () => {
           {/* GitHub */}
           <motion.a
             whileHover={{ scale: 1.1, y: -2 }}
-            className="text-slate-500 hover:text-primary transition-colors"
+            className="text-slate-500 hover:text-sky-500 transition-colors"
             href="https://github.com/imsadman90"
             target="_blank"
             rel="noreferrer"

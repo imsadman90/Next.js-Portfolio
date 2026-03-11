@@ -1,160 +1,180 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 
-// Removed unused `color` property for cleaner data
 const skillCategories = [
   {
     title: "Frontend",
     icon: "web",
     skills: [
-      { name: "React.js", level: 90 },
-      { name: "Next.js", level: 80 },
-      { name: "Tailwind CSS", level: 88 },
-      { name: "JavaScript (ES6+)", level: 92 },
-      { name: "Accessibility", level: 85 },
+      {
+        name: "HTML",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+      {
+        name: "JavaScript",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "React JS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Next JS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      },
     ],
   },
   {
     title: "Backend & Database",
     icon: "dns",
     skills: [
-      { name: "Node.js", level: 84 },
-      { name: "Express.js", level: 82 },
-      { name: "RESTful APIs", level: 86 },
-      { name: "JWT Authentication", level: 78 },
-      { name: "MongoDN", level: 90 },
+      {
+        name: "Node JS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Express JS",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "Python",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "MongoDB",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      },
+      {
+        name: "MySQL",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      },
+      {
+        name: "Firebase",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+      },
     ],
   },
 
   {
-    title: "Tools & Animations",
+    title: "Tools",
     icon: "construction",
     skills: [
-      { name: "Git & GitHub", level: 92 },
-      { name: "VS Code", level: 90 },
-      { name: "npm", level: 88 },
-      { name: "Framer Motion", level: 85 },
-      { name: "CSS Animations", level: 80 },
+      {
+        name: "Git",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+      {
+        name: "GitHub",
+        image: "https://www.svgrepo.com/show/394174/github.svg",
+      },
+      {
+        name: "VS Code",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+      },
+      {
+        name: "Figma",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      },
+      {
+        name: "npm",
+        image:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
+      },
+      {
+        name: "Framer",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy62shgDvjBlawNx7cxFpVVyP8sudl4oDhBw&s",
+      },
     ],
   },
 ];
 
-// Extracted card into its own component for better readability and reusability
-const SkillCard = ({ category }) => {
+// Individual skill icon card — pure CSS hover, no framer-motion
+const SkillIconCard = ({ skill }) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.02, y: -4 }}
-      className="group relative flex flex-col p-6 rounded-2xl bg-[#1a162e]/60 backdrop-blur-xl border border-white/5 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(55,19,236,0.3)] min-h-[340px]"
-    >
-      {/* Category Header */}
-      <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/5">
-        <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:text-white group-hover:bg-primary/20 transition-colors">
-          <span className="material-symbols-outlined text-[24px]">
-            {category.icon}
-          </span>
-        </div>
-        <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-          {category.title}
-        </h3>
+    <div className="group flex flex-col items-center justify-center p-5 rounded-xl bg-[#1a162e]/70 backdrop-blur-xl border border-white/5 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_25px_-5px_rgba(55,19,236,0.35)] hover:-translate-y-1 hover:scale-[1.04] w-28 h-28 md:w-40 md:h-40">
+      <div className="flex items-center justify-center flex-1">
+        <Image
+          src={skill.image}
+          alt={skill.name}
+          width={64}
+          height={64}
+          className="object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-300 w-14 h-14 md:w-16 md:h-16"
+        />
       </div>
-
-      {/* Skill List */}
-      <ul className="flex flex-col gap-4">
-        {category.skills.map((skill, index) => (
-          <li
-            key={skill.name}
-            className="flex flex-col gap-2 text-[#d0cde8] group-hover:text-white transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary">
-                  chevron_right
-                </span>
-                <span className="text-md font-medium">{skill.name}</span>
-              </div>
-              <span className="text-md text-slate-400 font-semibold">
-                {skill.level}%
-              </span>
-            </div>
-
-            <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2 + index * 0.1,
-                  ease: "easeOut",
-                }}
-                className="h-full rounded-full bg-gradient-to-r from-primary to-purple-600"
-              />
-            </div>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
+      <span className="text-white/70 text-sm md:text-base font-light tracking-wide uppercase mt-2">
+        {skill.name}
+      </span>
+    </div>
   );
 };
 
 const Skills = () => {
-  // Animation variants (kept simple and reusable)
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // Slightly increased for smoother flow
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <section
       id="skills"
       className="flex-grow flex flex-col items-center justify-center py-12 px-4 md:px-10 relative"
     >
-      <div className="layout-content-container flex flex-col max-w-[1200px] w-full z-10">
+      <div className="flex flex-col max-w-[1200px] w-full z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-white text-4xl md:text-5xl font-bold leading-tight tracking-[-0.015em] mb-4">
-            Technical <span className="text-primary">Skills</span>
+        <div className="text-center mb-12">
+          <h2 className="text-white/70 text-4xl md:text-5xl font-light mb-4">
+            My <span className="text-sky-500">Skills</span>
           </h2>
-          <p className="text-[#9b92c9] text-base md:text-lg font-normal leading-normal max-w-2xl mx-auto">
-            My technical arsenal and proficiency levels as a MERN Stack
-            Developer. I specialize in building scalable web applications.
+          <p className="text-[#9b92c9] text-base md:text-lg font-light max-w-2xl mx-auto">
+            Technologies and tools I work with as a MERN Stack Developer.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Skills Grid – switched to CSS Grid for cleaner, more maintainable layout */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        {/* Skill Categories */}
+        <div className="flex flex-col gap-12">
           {skillCategories.map((category) => (
-            <motion.div key={category.title} variants={itemVariants}>
-              <SkillCard category={category} />
-            </motion.div>
+            <div key={category.title}>
+              {/* Category Title */}
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="size-10 rounded-lg bg-white/10/10 flex items-center justify-center text-sky-500">
+                  <span className="material-symbols-outlined text-[22px]">
+                    {category.icon}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-light text-white/70">
+                  {category.title}
+                </h3>
+              </div>
+
+              {/* Skills Icon Grid */}
+              <div className="flex flex-wrap justify-center gap-4 md:gap-5">
+                {category.skills.map((skill) => (
+                  <SkillIconCard key={skill.name} skill={skill} />
+                ))}
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

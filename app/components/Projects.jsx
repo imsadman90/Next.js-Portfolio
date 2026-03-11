@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState, memo } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -11,6 +10,29 @@ const ProjectDetail = dynamic(() => import("./ProjectDetail"), {
 });
 
 const projects = [
+  {
+    id: "carexyz",
+    title: "Care.xyz — Caregiving Marketplace Platform",
+    description:
+      "A modern caregiving marketplace web application built with Next.js, React, and Tailwind CSS. Care.xyz allows users to browse caregiving services, create accounts, book services, and communicate through a secure contact form. The platform includes user authentication, a booking flow, service listings, and an admin dashboard — all within a smooth, responsive UI enhanced with animations and scroll smoothing.",
+    image: "https://i.postimg.cc/yxHyMwMJ/Screenshot-2026-03-11-230502.png",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lenis Scroll",
+      "MongoDB",
+      "Next.js API Routes",
+      "Nodemailer",
+    ],
+    liveUrl: "https://care-xyz-new.vercel.app/",
+    repoUrl: "https://github.com/imsadman90/care-xyz.git",
+    challenges:
+      "Implementing a complete booking workflow with authentication, designing scalable API routes in Next.js, managing MongoDB data persistence, integrating a secure SMTP email system with Nodemailer, and maintaining smooth UX with animations and scroll smoothing.",
+    improvements:
+      "Add real-time notifications for bookings, implement advanced search and filtering for services, integrate payment gateways, and expand the admin dashboard with analytics and user management tools.",
+  },
   {
     id: "autoverse",
     title: "AutoVerse — Car Explorer & Comparison Platform",
@@ -78,83 +100,89 @@ const projects = [
   },
 ];
 
-// Animation variants (defined outside component for clarity)
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
 // Memoized Project Card for better performance
 const ProjectCard = memo(({ project, index, onSelectProject }) => {
   return (
-    <motion.article
-      variants={itemVariants}
-      className="group relative flex flex-col h-full bg-[#1e1933]/60 border border-white/10 rounded-xl overflow-hidden hover:shadow-[0_10px_30px_-10px_rgba(55,19,236,0.4)] transition-all duration-300"
-    >
-      {/* Image with optimized Next/Image */}
-      <div className="relative w-full aspect-video overflow-hidden bg-slate-800">
+    <article className="group relative flex flex-col h-full bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500">
+      {/* Image */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          priority={index < 3} // Preload all (only 3 images total)
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          priority={index < 3}
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1e1933]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0b1e] via-transparent to-transparent opacity-60" />
       </div>
 
       {/* Card Content */}
-      <div className="flex flex-col flex-1 p-6 gap-4">
-        <div className="flex flex-col gap-2">
-          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-            {project.title}
-          </h3>
-          <p className="text-slate-400 text-md leading-relaxed line-clamp-3">
-            {project.description}
-          </p>
+      <div className="flex flex-col flex-1 px-5 py-4 gap-3">
+        <h3 className="text-lg font-medium text-white/70/90 group-hover:text-sky-400 transition-colors leading-snug">
+          {project.title}
+        </h3>
+        <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
+          {project.description}
+        </p>
+
+        {/* Tech tags */}
+        <div className="flex flex-wrap gap-1.5 mt-auto">
+          {project.stack.slice(0, 4).map((tech) => (
+            <span
+              key={tech}
+              className="px-2.5 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.stack.length > 4 && (
+            <span className="px-2.5 py-0.5 text-[11px] font-medium tracking-wide rounded-full bg-white/5 text-slate-400 border border-white/10">
+              +{project.stack.length - 4}
+            </span>
+          )}
         </div>
 
         {/* Action Buttons */}
-        <div className="mt-auto flex gap-3">
+        <div className="flex gap-2 pt-2">
           <button
             onClick={() => onSelectProject(project)}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-md font-semibold transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-full text-sm font-medium border border-sky-500/20 transition-colors"
           >
-            <span className="material-symbols-outlined text-[16px]">
+            <span className="material-symbols-outlined text-[15px]">
               visibility
             </span>
-            View Details
+            Details
           </button>
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 text-white rounded-lg text-md font-semibold border border-white/10 transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-white/10 text-white/70/80 rounded-full text-sm font-medium border border-white/10 transition-colors"
           >
-            <span className="material-symbols-outlined text-[16px]">
+            <span className="material-symbols-outlined text-[15px]">
               open_in_new
             </span>
-            Live
+            Live Demo
           </a>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 });
 
 ProjectCard.displayName = "ProjectCard";
 
+const ITEMS_PER_PAGE = 3;
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const paginatedProjects = projects.slice(
+    currentPage * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE,
+  );
 
   return (
     <section
@@ -163,35 +191,24 @@ const Projects = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Projects by{" "}
-            <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-              Sadman
-            </span>
+        <div className="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-light text-white/70 tracking-tight">
+            Projects by <span className="text-sky-500">Sadman</span>
           </h2>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
             A selection of my latest work in full-stack development. Exploring
             scalable architectures and intuitive user experiences with the MERN
             stack.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+        <div
+          key={currentPage}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          style={{ animation: "fadeInUp 0.4s ease-out" }}
         >
-          {projects.map((project, index) => (
+          {paginatedProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
@@ -199,7 +216,48 @@ const Projects = () => {
               onSelectProject={setSelectedProject}
             />
           ))}
-        </motion.div>
+        </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-3">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+              disabled={currentPage === 0}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white/70 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <span className="material-symbols-outlined text-[18px]">
+                chevron_left
+              </span>
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i)}
+                className={`w-10 h-10 rounded-full text-sm font-medium transition-all ${
+                  currentPage === i
+                    ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 shadow-[0_0_12px_rgba(56,189,248,0.2)]"
+                    : "bg-white/5 text-white/70/50 border border-white/10 hover:bg-white/10 hover:text-white/70/80"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+
+            <button
+              onClick={() =>
+                setCurrentPage((p) => Math.min(totalPages - 1, p + 1))
+              }
+              disabled={currentPage === totalPages - 1}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white/70 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <span className="material-symbols-outlined text-[18px]">
+                chevron_right
+              </span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Project Detail Modal */}

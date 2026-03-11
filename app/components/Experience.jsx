@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const experiences = [
   {
     role: "Frontend Developer",
@@ -33,21 +29,13 @@ const ExperienceCard = ({ experience, index }) => {
   const { role, company, years, summary, highlights } = experience;
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      className="glass-card rounded-2xl p-6 border border-white/10 bg-white/5 h-full min-h-[380px] flex-1"
-    >
+    <article className="glass-card rounded-2xl p-6 border border-white/20 bg-white/3 h-full min-h-[380px] flex-1 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h3 className="text-2xl font-semibold text-white leading-tight">
-            {role}
-          </h3>
-          <p className="text-primary font-semibold mt-1">{company}</p>
+          <h3 className="text-2xl font-light text-white/70">{role}</h3>
+          <p className="text-sky-500 font-light mt-1">{company}</p>
         </div>
-        <span className="text-md px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold whitespace-nowrap">
+        <span className="text-md px-3 py-1 rounded-full bg-white/10/10 text-sky-500 font-light whitespace-nowrap">
           {years}
         </span>
       </div>
@@ -57,14 +45,14 @@ const ExperienceCard = ({ experience, index }) => {
       <ul className="mt-6 space-y-3 text-md text-slate-300">
         {highlights.map((highlight, i) => (
           <li key={i} className="flex items-start gap-3">
-            <span className="material-symbols-outlined text-primary text-lg mt-0.5">
+            <span className="material-symbols-outlined text-sky-500 text-lg mt-0.5">
               check_circle
             </span>
             <span>{highlight}</span>
           </li>
         ))}
       </ul>
-    </motion.article>
+    </article>
   );
 };
 
@@ -76,18 +64,12 @@ const Experience = () => {
     >
       <div className="max-w-6xl w-full flex flex-col gap-16">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-6"
-        >
-          <p className="text-md uppercase tracking-[0.2em] text-primary/80 font-semibold">
+        <div className="text-center space-y-6 animate-[fadeInUp_0.6s_ease-out_both]">
+          <p className="text-md uppercase tracking-[0.2em] text-sky-500/80 font-light">
             Experience
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-light text-white/70">
             Practical Experience
           </h2>
 
@@ -96,7 +78,7 @@ const Experience = () => {
             real-world projects, continuous learning, and practical
             experimentation.
           </p>
-        </motion.div>
+        </div>
 
         {/* Experience cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

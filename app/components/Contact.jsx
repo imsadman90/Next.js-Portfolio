@@ -146,7 +146,7 @@ const Contact = () => {
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
+                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
                   htmlFor="name"
                 >
                   Name
@@ -170,7 +170,7 @@ const Contact = () => {
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
+                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
                   htmlFor="email"
                 >
                   Email
@@ -194,7 +194,7 @@ const Contact = () => {
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70/50 ml-0.5 tracking-wide"
+                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
                   htmlFor="message"
                 >
                   Message

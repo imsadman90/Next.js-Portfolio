@@ -23,7 +23,7 @@ const Education = () => {
           <h2 className="text-4xl md:text-5xl font-light text-white/70">
             Education
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+          <p className="text-slate-400 max-w-2xl mx-auto font-light">
             An academic background in language education combined with
             self-driven learning and hands-on frontend development.
           </p>
@@ -34,10 +34,10 @@ const Education = () => {
           {education.map((item) => (
             <article
               key={item.degree}
-              className="rounded-2xl p-6 border bg-white/2 border-white/30 "
+              className="rounded-2xl p-6 border bg-white/2 border-white/30 font-light"
             >
               <div className="flex items-center justify-between gap-4 mb-3">
-                <h3 className="text-xl font-light text-white/70 leading-tight">
+                <h3 className="text-xl font-light text-white/70 leading-tight ">
                   {item.degree}
                 </h3>
                 <span className="text-md px-3 py-1 rounded-full bg-white/10/10 text-sky-500 font-light">
@@ -45,7 +45,7 @@ const Education = () => {
                 </span>
               </div>
               <p className="text-slate-300 font-light">{item.school}</p>
-              <p className="text-slate-400 mt-3 text-md leading-relaxed">
+              <p className="text-slate-400 mt-3 text-md font-light leading-relaxed">
                 {item.details}
               </p>
             </article>

@@ -46,7 +46,7 @@ const About = () => {
                 building responsive and interactive web interfaces using React,
                 Next.js, and modern UI systems. I enjoy staying busy with
                 meaningful work and continuously improving my skills through
-                real projects.As a MERN stack developer, Sadman Sami focuses on
+                real projects. As a MERN stack developer, Sadman Sami focuses on
                 building scalable, production-ready applications with Node.js,
                 Express, and MongoDB. I believe in learning by building and
                 improving every iteration.Beyond coding, I&apos;m a vocalist and

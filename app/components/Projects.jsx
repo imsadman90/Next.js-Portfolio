@@ -118,9 +118,7 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
 
       {/* Card Content */}
       <div className="flex flex-col flex-1 px-5 py-4 gap-3">
-        <h3 className="text-lg font-medium text-white/70/90 group-hover:text-sky-400 transition-colors leading-snug">
-          {project.title}
-        </h3>
+        <h3 className="text-lg font-medium text-white/70">{project.title}</h3>
         <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
           {project.description}
         </p>
@@ -157,7 +155,7 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
             href={project.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-white/10 text-white/70/80 rounded-full text-sm font-medium border border-white/10 transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-white/10 text-white/70 rounded-full text-sm font-medium border border-white/10 transition-colors"
           >
             <span className="material-symbols-outlined text-[15px]">
               open_in_new
@@ -238,7 +236,7 @@ const Projects = () => {
                 className={`w-10 h-10 rounded-full text-sm font-medium transition-all ${
                   currentPage === i
                     ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 shadow-[0_0_12px_rgba(56,189,248,0.2)]"
-                    : "bg-white/5 text-white/70/50 border border-white/10 hover:bg-white/10 hover:text-white/70/80"
+                    : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white/70"
                 }`}
               >
                 {i + 1}

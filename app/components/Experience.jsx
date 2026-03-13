@@ -40,7 +40,9 @@ const ExperienceCard = ({ experience, index }) => {
         </span>
       </div>
 
-      <p className="mt-4 text-slate-300 leading-relaxed">{summary}</p>
+      <p className="mt-4 text-slate-300 font-light leading-relaxed">
+        {summary}
+      </p>
 
       <ul className="mt-6 space-y-3 text-md text-slate-300">
         {highlights.map((highlight, i) => (
@@ -48,7 +50,7 @@ const ExperienceCard = ({ experience, index }) => {
             <span className="material-symbols-outlined text-sky-500 text-lg mt-0.5">
               check_circle
             </span>
-            <span>{highlight}</span>
+            <span className="font-light">{highlight}</span>
           </li>
         ))}
       </ul>
@@ -73,7 +75,7 @@ const Experience = () => {
             Practical Experience
           </h2>
 
-          <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 max-w-2xl mx-auto font-light">
             Hands-on experience building frontend applications through
             real-world projects, continuous learning, and practical
             experimentation.

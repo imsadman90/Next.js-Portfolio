@@ -146,7 +146,7 @@ const Contact = () => {
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
+                  className="text-sm font-light text-white/70 ml-0.5 tracking-wide"
                   htmlFor="name"
                 >
                   Name
@@ -170,7 +170,7 @@ const Contact = () => {
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
+                  className="text-sm font-light text-white/70 ml-0.5 tracking-wide"
                   htmlFor="email"
                 >
                   Email
@@ -194,7 +194,7 @@ const Contact = () => {
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-sm font-medium text-white/70 ml-0.5 tracking-wide"
+                  className="text-sm font-light text-white/70 ml-0.5 tracking-wide"
                   htmlFor="message"
                 >
                   Message
@@ -212,7 +212,7 @@ const Contact = () => {
               </div>
 
               <button
-                className="mt-2 w-full bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 font-medium py-3.5 rounded-full border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 flex items-center justify-center gap-2 group/btn disabled:opacity-50 disabled:cursor-not-allowed"
+                className="mt-2 w-full bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 font-light py-3.5 rounded-full border border-sky-500/20 hover:border-sky-500/40 transition-all duration-300 flex items-center justify-center gap-2 group/btn disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
                 disabled={status === "sending"}
               >

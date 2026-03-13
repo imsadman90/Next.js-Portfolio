@@ -85,7 +85,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
           </h1>
 
           {/* Description */}
-          <p className="text-slate-300 text-lg leading-relaxed mb-8">
+          <p className="text-slate-300 font-light text-lg mb-8">
             {project.description}
           </p>
 
@@ -117,7 +117,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
               </span>
               Challenges Faced
             </h2>
-            <p className="text-slate-300 leading-relaxed bg-white/5 border border-white/10 rounded-lg p-4">
+            <p className="text-slate-300 font-light bg-white/5 border border-white/10 rounded-lg p-4">
               {project.challenges}
             </p>
           </div>
@@ -130,7 +130,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
               </span>
               Future Improvements
             </h2>
-            <p className="text-slate-300 leading-relaxed bg-white/5 border border-white/10 rounded-lg p-4">
+            <p className="text-slate-300 font-light bg-white/5 border border-white/10 rounded-lg p-4">
               {project.improvements}
             </p>
           </div>

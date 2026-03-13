@@ -118,7 +118,7 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
 
       {/* Card Content */}
       <div className="flex flex-col flex-1 px-5 py-4 gap-3">
-        <h3 className="text-lg font-medium text-white/70">{project.title}</h3>
+        <h3 className="text-lg font-light text-white/70">{project.title}</h3>
         <p className="text-slate-400 text-sm leading-relaxed line-clamp-2">
           {project.description}
         </p>
@@ -128,13 +128,13 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
           {project.stack.slice(0, 4).map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-0.5 text-[11px] font-medium tracking-wide uppercase rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20"
+              className="px-2.5 py-0.5 text-[11px] font-light tracking-wide uppercase rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20"
             >
               {tech}
             </span>
           ))}
           {project.stack.length > 4 && (
-            <span className="px-2.5 py-0.5 text-[11px] font-medium tracking-wide rounded-full bg-white/5 text-slate-400 border border-white/10">
+            <span className="px-2.5 py-0.5 text-[11px] font-light tracking-wide rounded-full bg-white/5 text-slate-400 border border-white/10">
               +{project.stack.length - 4}
             </span>
           )}
@@ -144,7 +144,7 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
         <div className="flex gap-2 pt-2">
           <button
             onClick={() => onSelectProject(project)}
-            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-full text-sm font-medium border border-sky-500/20 transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 rounded-full text-sm font-light border border-sky-500/20 transition-colors"
           >
             <span className="material-symbols-outlined text-[15px]">
               visibility
@@ -155,7 +155,7 @@ const ProjectCard = memo(({ project, index, onSelectProject }) => {
             href={project.liveUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-white/10 text-white/70 rounded-full text-sm font-medium border border-white/10 transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-white/10 text-white/70 rounded-full text-sm font-light border border-white/10 transition-colors"
           >
             <span className="material-symbols-outlined text-[15px]">
               open_in_new
@@ -233,7 +233,7 @@ const Projects = () => {
               <button
                 key={i}
                 onClick={() => setCurrentPage(i)}
-                className={`w-10 h-10 rounded-full text-sm font-medium transition-all ${
+                className={`w-10 h-10 rounded-full text-sm font-light transition-all ${
                   currentPage === i
                     ? "bg-sky-500/20 text-sky-400 border border-sky-500/40 shadow-[0_0_12px_rgba(56,189,248,0.2)]"
                     : "bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 hover:text-white/70"

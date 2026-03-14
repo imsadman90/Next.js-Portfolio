@@ -55,7 +55,7 @@ const Contact = () => {
         {/* Left Column: Info & Social */}
         <div className="flex flex-col gap-8 order-2 lg:order-1">
           <div className="space-y-6">
-            <h2 className="text-5xl lg:text-6xl font-light  to-white/50">
+            <h2 className="text-5xl lg:text-6xl font-light  text-white/50">
               Contact with <br />
               <span className="text-sky-500">Sadman</span>
             </h2>

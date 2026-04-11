@@ -14,7 +14,7 @@ const Education = () => {
       id="education"
       className="flex-grow flex flex-col items-center justify-center py-12 px-6 lg:px-12 relative"
     >
-      <div className="max-w-4xl w-full flex flex-col gap-10 z-10">
+      <div className="max-w-4xl w-full flex flex-col lg:flex-row gap-10 z-10">
         {/* Header */}
         <div className="text-center space-y-4 animate-[fadeInUp_0.6s_ease-out_both]">
           <p className="text-md uppercase tracking-[0.2em] text-sky-500/80 font-light">
@@ -29,18 +29,17 @@ const Education = () => {
           </p>
         </div>
 
+        <div className="w-full h-px lg:w-px lg:h-auto bg-gradient-to-r lg:bg-gradient-to-b from-transparent via-sky-500/80 to-transparent animate-pulse self-stretch" />
+
         {/* Education Items */}
         <div className="flex flex-col gap-10 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300">
           {education.map((item) => (
-            <article
-              key={item.degree}
-              className="rounded-2xl p-6 border bg-white/2 border-white/30 font-light"
-            >
+            <article key={item.degree} className="rounded-2xl p-6 font-light">
               <div className="flex items-center justify-between gap-4 mb-3">
                 <h3 className="text-xl font-light text-white/70 leading-tight ">
                   {item.degree}
                 </h3>
-                <span className="text-md px-3 py-1 rounded-full bg-white/10/10 text-sky-500 font-light">
+                <span className="text-md px-3 py-1 rounded-full bg-white/10 text-sky-500 font-light">
                   {item.years}
                 </span>
               </div>

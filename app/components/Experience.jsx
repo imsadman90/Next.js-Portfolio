@@ -25,7 +25,7 @@ const experiences = [
   },
 ];
 
-const ExperienceCard = ({ experience, index }) => {
+const ExperienceCard = ({ experience }) => {
   const { role, company, years, summary, highlights } = experience;
 
   return (
@@ -82,10 +82,20 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Experience cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Timeline cards */}
+        <div className="relative flex flex-col gap-8 md:gap-12">
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-sky-500/80 to-transparent animate-pulse" />
+          <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-sky-400 shadow-[0_0_20px_6px_rgba(56,189,248,0.45)]" />
+
           {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} index={index} />
+            <div
+              key={index}
+              className={`w-full flex ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}
+            >
+              <div className="w-full md:w-[calc(50%-1.5rem)]">
+                <ExperienceCard experience={experience} />
+              </div>
+            </div>
           ))}
         </div>
       </div>

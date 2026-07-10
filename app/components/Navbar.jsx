@@ -50,7 +50,7 @@ export default function Navbar() {
   const linkRefs = useRef([]);
   const currentIdx = hoveredIdx !== null ? hoveredIdx : activeIdx;
 
-  // Slide the highlight pill under the active / hovered nav item
+  // Slide the highlight pill under the active / hovered nav item bro
   const updateIndicator = useCallback(() => {
     const idx = hoveredIdx !== null ? hoveredIdx : activeIdx;
     const el = linkRefs.current[idx];

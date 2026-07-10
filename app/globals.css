@@ -1,8 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 }
+
+/* Site-wide gradient backdrop — painted on <html> so it spans the whole
+   scroll height. Sections are transparent and let this show through. */
+html {
+  background: linear-gradient(
+    170deg,
+    #f7faff 0%,
+    #eef3ff 38%,
+    #e9effe 68%,
+    #eff4ff 100%
+  );
+  background-attachment: fixed;
+}
+
+body {
+  background: transparent;
+  color: #334155; /* slate-700 */
+}
+
+/* Dynamic gradient button — animated sheen slide + lift on hover. */
+.btn-gradient {
+  background-image: linear-gradient(
+    110deg,
+    #2563eb 0%,
+    #3b82f6 45%,
+    #0ea5e9 100%
+  );
+  background-size: 180% 100%;
+  background-position: 0% 0;
+  color: #fff;
+  transition:
+    background-position 0.6s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
+}
+
+.btn-gradient:hover {
+  background-position: 100% 0;
+  box-shadow: 0 14px 34px -10px rgba(37, 99, 235, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-gradient:active {
+  transform: translateY(0) scale(0.98);
+}
+
 
 html {
   /* Removed smooth scroll for better mobile performance */
@@ -11,12 +57,12 @@ html {
 
 /* Theme configuration using CSS variables for Tailwind v4 */
 @theme {
-  --color-primary: #3713ec;
-  --color-primary-glow: #5d3eff;
-  --color-secondary-glow: #00f0ff;
-  --color-background-light: #f6f6f8;
-  --color-background-dark: #0b0c15;
-  --color-surface-dark: #131022;
+  --color-primary: #2563eb; /* blue-600 — main accent */
+  --color-primary-glow: #3b82f6;
+  --color-secondary-glow: #38bdf8;
+  --color-background-light: #ffffff;
+  --color-background-dark: #ffffff; /* kept for legacy class refs, now white */
+  --color-surface-dark: #f8fafc;
   --font-display: "Inter", sans-serif;
 }
 
@@ -60,5 +106,144 @@ html {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Hero — dynamic ambient motion */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes blobDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(24px, -30px) scale(1.08);
+  }
+  66% {
+    transform: translate(-20px, 22px) scale(0.94);
+  }
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes caretBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blobDrift 20s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 24s linear infinite;
+}
+
+.caret-blink {
+  animation: caretBlink 1s step-end infinite;
+}
+
+/* Masked dot grid for hero backdrop */
+.hero-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.09) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 45%,
+    #000 35%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 75% 60% at 50% 45%,
+    #000 35%,
+    transparent 100%
+  );
+}
+
+/* Infinite logo marquee (skills) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+  width: max-content;
+}
+
+/* Pause the marquee while hovering its container. Plain CSS (not a Tailwind
+   group-hover utility) so it isn't overridden by the unlayered rule above. */
+.marquee-mask:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-blob,
+  .animate-spin-slow,
+  .animate-marquee,
+  .caret-blink {
+    animation: none;
   }
 }

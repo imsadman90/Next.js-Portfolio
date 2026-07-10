@@ -6,36 +6,6 @@ const geist = Geist({ subsets: ["latin"] });
 
 const SITE_URL = "https://sadman-sami.vercel.app";
 
-// Only the Material Symbols icons actually used across the site — keeps the
-// icon font download tiny instead of pulling the entire variable font.
-const MATERIAL_ICONS = [
-  "alternate_email",
-  "call",
-  "check_circle",
-  "chevron_left",
-  "chevron_right",
-  "close",
-  "code",
-  "code_blocks",
-  "construction",
-  "css",
-  "dns",
-  "folder",
-  "javascript",
-  "language",
-  "mail",
-  "menu",
-  "open_in_new",
-  "person",
-  "report",
-  "send",
-  "upgrade",
-  "visibility",
-  "web",
-].join(",");
-
-const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=${MATERIAL_ICONS}&display=swap`;
-
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -186,7 +156,6 @@ export default function RootLayout({ children }) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link rel="stylesheet" href={MATERIAL_SYMBOLS_HREF} />
         <link rel="canonical" href={SITE_URL} />
         <script
           type="application/ld+json"
@@ -209,7 +178,7 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={
-          geist.className + " bg-background-dark font-sans antialiased"
+          geist.className + " bg-white text-slate-700 font-sans antialiased"
         }
       >
         <LenisProvider>{children}</LenisProvider>

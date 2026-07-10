@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/5 bg-background-dark py-8 relative z-10">
+    <footer className="border-t border-slate-200 bg-white/50 py-8 relative z-10 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
         <motion.p
           initial={{ opacity: 0 }}
@@ -12,7 +12,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-slate-500 text-md"
         >
-          © 2026 Sadman Sami. All rights reserved.
+          &copy; 2026 Sadman Sami. All rights reserved.
         </motion.p>
 
         <motion.div

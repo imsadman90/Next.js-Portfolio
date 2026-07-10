@@ -37,7 +37,7 @@ const Hero = () => {
           <div className="flex flex-col gap-8 order-2 lg:order-1 text-center lg:text-left animate-[fadeInLeft_0.7s_ease-out_0.1s_both]">
             <div className="space-y-6">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10/10 border border-primary/20 w-fit mx-auto lg:mx-0 animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-primary/20 w-fit mx-auto lg:mx-0 animate-[fadeInUp_0.5s_ease-out_0.2s_both]">
                 <span className="text-md font-light text-slate-300">
                   MERN Stack Developer | Frontend Developer
                 </span>
@@ -131,7 +131,7 @@ const Hero = () => {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-100 hover:border-primary/60 hover:bg-white/10/10 transition-all duration-200"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-100 hover:border-primary/60 hover:bg-white/10 transition-all duration-200"
             >
               <span className="material-symbols-outlined text-[18px]">
                 {social.icon}

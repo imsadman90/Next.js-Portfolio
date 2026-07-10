@@ -156,7 +156,7 @@ const Skills = () => {
             <div key={category.title}>
               {/* Category Title */}
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="size-10 rounded-lg bg-white/10/10 flex items-center justify-center text-sky-500">
+                <div className="size-10 rounded-lg bg-white/10 flex items-center justify-center text-sky-500">
                   <span className="material-symbols-outlined text-[22px]">
                     {category.icon}
                   </span>

@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }) => {
           <h3 className="text-2xl font-light text-white/70">{role}</h3>
           <p className="text-sky-500 font-light mt-1">{company}</p>
         </div>
-        <span className="text-md px-3 py-1 rounded-full bg-white/10/10 text-sky-500 font-light whitespace-nowrap">
+        <span className="text-md px-3 py-1 rounded-full bg-white/10 text-sky-500 font-light whitespace-nowrap">
           {years}
         </span>
       </div>

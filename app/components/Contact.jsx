@@ -73,7 +73,7 @@ const Contact = () => {
             <div className="flex gap-6">
               {/* GitHub */}
               <a
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://github.com/imsadman90"
                 target="_blank"
                 rel="noreferrer"
@@ -85,7 +85,7 @@ const Contact = () => {
 
               {/* LinkedIn */}
               <a
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://www.linkedin.com/in/sadman-sami-dev/"
                 target="_blank"
                 rel="noreferrer"
@@ -97,7 +97,7 @@ const Contact = () => {
 
               {/* Twitter/X */}
               <a
-                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
+                className="group flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 hover:shadow-[0_0_20px_rgba(55,19,236,0.4)]"
                 href="https://twitter.com/iamsadmansami"
                 target="_blank"
                 rel="noreferrer"

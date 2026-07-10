@@ -1,39 +1,7 @@
 @import "tailwindcss";
 
-/* Custom Grid Animation/Style */
-.bg-grid {
-  background-size: 40px 40px;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    10%,
-    white,
-    90%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    5%,
-    white,
-    95%,
-    transparent
-  );
-}
-
 :root {
   color-scheme: light dark;
-}
-
-:root:not(.dark) .input-glass {
-  background: rgba(255, 255, 255, 0.9);
-  color: #0b0c15;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-:root:not(.dark) .input-glass:focus {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 12px rgba(55, 19, 236, 0.2);
 }
 
 html {
@@ -79,17 +47,6 @@ html {
   from {
     opacity: 0;
     transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
   }
   to {
     opacity: 1;

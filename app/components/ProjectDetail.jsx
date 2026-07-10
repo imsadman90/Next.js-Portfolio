@@ -141,7 +141,7 @@ const ProjectDetail = ({ project, isOpen, onClose }) => {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/10/90 hover:scale-105 active:scale-95 text-white/70 rounded-lg font-light transition-all shadow-lg shadow-primary/25"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 hover:scale-105 active:scale-95 text-white/70 rounded-lg font-light transition-all shadow-lg shadow-primary/25"
             >
               <span className="material-symbols-outlined">language</span>
               View Live Project

@@ -4,7 +4,37 @@ import LenisProvider from "./LenisProvider";
 
 const geist = Geist({ subsets: ["latin"] });
 
-const SITE_URL = "https://sadmansami.dev";
+const SITE_URL = "https://sadman-sami.vercel.app";
+
+// Only the Material Symbols icons actually used across the site — keeps the
+// icon font download tiny instead of pulling the entire variable font.
+const MATERIAL_ICONS = [
+  "alternate_email",
+  "call",
+  "check_circle",
+  "chevron_left",
+  "chevron_right",
+  "close",
+  "code",
+  "code_blocks",
+  "construction",
+  "css",
+  "dns",
+  "folder",
+  "javascript",
+  "language",
+  "mail",
+  "menu",
+  "open_in_new",
+  "person",
+  "report",
+  "send",
+  "upgrade",
+  "visibility",
+  "web",
+].join(",");
+
+const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=${MATERIAL_ICONS}&display=swap`;
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -79,11 +109,7 @@ export const metadata = {
     },
   },
   verification: {
-    // Replace with your actual Google Search Console verification code
-    google: "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
-  },
-  other: {
-    "google-site-verification": "YOUR_GOOGLE_SITE_VERIFICATION_CODE",
+    google: "-EoqD9P27dJOVHPmnROF-WDjIzdE-PEvjOAZYJNCs2Y",
   },
 };
 
@@ -119,7 +145,7 @@ const personSchema = {
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
-    name: "Your University Name",
+    name: "University of Dhaka — Institute of Education and Research (IER)",
   },
 };
 
@@ -154,10 +180,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={geist.className}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
+        <link rel="stylesheet" href={MATERIAL_SYMBOLS_HREF} />
         <link rel="canonical" href={SITE_URL} />
         <script
           type="application/ld+json"

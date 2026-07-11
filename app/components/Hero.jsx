@@ -234,9 +234,9 @@ const Hero = () => {
                   <Image
                     alt="Professional headshot of Sadman Sami"
                     className="h-full w-full object-cover"
-                    src="https://i.ibb.co/XZLRCfpr/sami.jpg"
-                    width={384}
-                    height={384}
+                    src="/images/profile.webp"
+                    width={1000}
+                    height={1250}
                     priority
                     sizes="(max-width: 768px) 288px, 320px"
                     quality={90}

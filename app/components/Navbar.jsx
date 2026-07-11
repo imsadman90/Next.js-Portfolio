@@ -134,7 +134,7 @@ export default function Navbar() {
             >
               <span className="relative block h-9 w-9 overflow-hidden rounded-full ring-2 ring-blue-100">
                 <Image
-                  src="https://i.ibb.co/XZLRCfpr/sami.jpg"
+                  src="/images/profile.webp"
                   alt="Sadman Sami"
                   fill
                   sizes="36px"
@@ -160,7 +160,7 @@ export default function Navbar() {
                 <div className="relative h-16 bg-gradient-to-r from-blue-600 to-sky-500">
                   <div className="absolute -bottom-8 left-5 h-16 w-16 overflow-hidden rounded-xl ring-4 ring-white">
                     <Image
-                      src="https://i.ibb.co/XZLRCfpr/sami.jpg"
+                      src="/images/profile.webp"
                       alt="Sadman Sami"
                       fill
                       sizes="64px"
@@ -310,7 +310,7 @@ export default function Navbar() {
           <div className="mb-2 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3">
             <span className="relative block h-11 w-11 overflow-hidden rounded-full ring-2 ring-blue-100">
               <Image
-                src="https://i.ibb.co/XZLRCfpr/sami.jpg"
+                src="/images/profile.webp"
                 alt="Sadman Sami"
                 fill
                 sizes="44px"

@@ -92,7 +92,7 @@ const personSchema = {
   givenName: "Sadman",
   familyName: "Sami",
   url: SITE_URL,
-  image: "https://i.ibb.co/pjSM4L2R/sami.png",
+  image: `${SITE_URL}/images/profile.webp`,
   jobTitle: "Frontend Developer & MERN Stack Engineer",
   description:
     "Sadman Sami is a Frontend Developer and MERN Stack Engineer specializing in React, Next.js, Node.js, MongoDB, and modern web technologies.",

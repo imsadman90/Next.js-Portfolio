@@ -197,7 +197,7 @@ const About = () => {
                 <div className="relative h-24 bg-gradient-to-r from-blue-600 to-sky-500">
                   <div className="absolute -bottom-10 left-6 h-24 w-24 overflow-hidden rounded-2xl ring-4 ring-white">
                     <Image
-                      src="https://i.ibb.co/XZLRCfpr/sami.jpg"
+                      src="/images/profile.webp"
                       alt="Sadman Sami"
                       fill
                       sizes="96px"
